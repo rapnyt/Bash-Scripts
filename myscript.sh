@@ -63,6 +63,8 @@ fi
 
 echo $? # $? checks for the exit code of last action, 0 means successful
 
+date=$(date +%Y-%m-%d_%H-%M-%S)
+
 if [ $? -eq 0 ]
 then
 	echo "Last command was successful at $date" >> script_results_$date.log
