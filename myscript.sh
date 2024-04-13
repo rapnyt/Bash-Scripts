@@ -57,4 +57,15 @@ fi
 
 #$htop #it would normally would run htop
 
+#exit codes
 
+# exit codes
+
+echo $? # $? checks for the exit code of last action, 0 means successful
+
+if [ $? -eq 0 ]
+then
+	echo "Last command was successful at $date" >> script_results_$date.log
+else
+	echo "Last command was not successful at $date"  >> script_results_$date.log
+fi
