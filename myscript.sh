@@ -71,3 +71,8 @@ then
 else
 	echo "Last command was not successful at $date"  >> script_results_$date.log
 fi
+
+#exit 199
+echo $? #normally it would exit with previous command with exit code of 199, but the echoe $? will not be executed within the script, because the excript has ended. Still if we manually do the echo $? it will give out exit code of 199
+
+sudo apt-get install dsjkfhdskfsdh >> logs_$date.log #it will create the log, but if the package is not present it will still print on the terminal the package does not exist message
