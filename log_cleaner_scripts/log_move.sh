@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #This will move all of the log files to a seperate dedicated folder
 n=0
 for file in ~/Scripts/Bash-Scripts/*.log

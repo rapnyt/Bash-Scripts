@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #This will move all of the tar.gz files to a seperate folder
 n=0
 for file in ~/Scripts/Bash-Scripts/*.tar.gz
