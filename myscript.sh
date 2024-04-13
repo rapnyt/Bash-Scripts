@@ -21,3 +21,10 @@ now=$(date)
 
 echo "The system time and date is: " $now
 
+expr 30 + 10
+
+first=30
+second=20
+
+expr $first + $second
+expr $first \* $second #not without the escape char, reserved special char
