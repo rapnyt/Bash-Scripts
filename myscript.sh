@@ -80,9 +80,33 @@ sudo apt-get install dsjkfhdskfsdh >> logs_$date.log #it will create the log, bu
 #while loops
 myvar=1
 
-while [ $myvar -le 10 ]
+echo "this is using the while loop"
+
+while [ $myvar -le 2 ]
 do
-	echo $myvar
+	echo "$myvar..."
 	myvar=$(( $myvar +1 )) #arithmetic operations require double (())
-	sleep 0.2
+	sleep 0.1
 done
+
+# for loop
+
+echo "and this is using the for loop"
+
+for number in 1 2
+do
+	echo "$number..."
+	sleep 0.1
+done
+
+echo "aaaaaaaaaaaand we're done."
+
+# or in more elegant way
+
+for number in {1..2}
+do
+	echo "$number..."
+	sleep 0.1
+done
+
+echo -e "this way is better.\nat least at the bash level ;)"
