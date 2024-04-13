@@ -1,4 +1,6 @@
 *.log
 *.tar.gz
+*.swp
+*.swo
 tar.gz
 logs
