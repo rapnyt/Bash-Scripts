@@ -23,8 +23,38 @@ echo "The system time and date is: " $now
 
 expr 30 + 10
 
-first=30
+first=29
 second=20
 
 expr $first + $second
 expr $first \* $second #not without the escape char, reserved special char
+
+#if statement, !-negates, -eq equal, -ne not equal, -gt greater than, -f file, -d folder 
+if [ ! $first -eq 30 ]
+then
+	echo "first equals to 30"
+else
+	echo "it is not equal to 30"
+fi
+
+if [ -f ~/berserker ]
+then
+	echo "file berserker exists"
+else
+	echo "file does not exist"
+fi
+
+htop=/usr/bin/htop
+command=htop
+
+if [ -f $htop ] #or use if command -v $command - it checks if a command exists, note that it's without brackets, brackets are used if there's a test
+then
+	echo "$htop is available, launching..."
+else
+	echo "$htop is NOT avaialble, installing..."
+	sudo apt update && sudo apt install -y htop
+fi
+
+#$htop #it would normally would run htop
+
+
