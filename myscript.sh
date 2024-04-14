@@ -117,4 +117,18 @@ ls /etc 1>> standard_output_ls 2>> standard_errors_ls
 
 echo "Please enter your name: "
 read myname
-echo "Your name is: $myname"
+echo "Your name is: $mynamei"
+
+# functiions
+
+check_exit_status() {
+	if [ $? -ne 0 ]
+	then
+		echo "An error occurred"
+	else
+		echo "No errors"
+	fi
+}
+
+check_exit_status #calling the function
+
