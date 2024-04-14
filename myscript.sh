@@ -132,3 +132,27 @@ check_exit_status() {
 
 check_exit_status #calling the function
 
+# case statements
+
+finished=0
+
+while [ $finished -ne 1 ]
+do
+	echo "What is your favourite Linux distribution?'"
+
+	echo "1 - Ubuntu"
+	echo "2 - Slackware"
+	echo "3 - exits the script"
+
+	read distro;
+
+	case $distro in
+		1) echo "There are more distroes out there, you know?";;
+		2) echo "The only right answer ;)";;
+		3) finished=1 ;;
+		*) echo "No appropiate option selected"
+	esac
+done
+
+echo "Thank you for using the script."
+
