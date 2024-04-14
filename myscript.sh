@@ -110,3 +110,11 @@ do
 done
 
 echo -e "this way is better.\nat least at the bash level ;)"
+
+# data stream
+
+ls /etc 1>> standard_output_ls 2>> standard_errors_ls
+
+echo "Please enter your name: "
+read myname
+echo "Your name is: $myname"
