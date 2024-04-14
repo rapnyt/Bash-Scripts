@@ -156,3 +156,20 @@ done
 
 echo "Thank you for using the script."
 
+# Arguments
+
+if $1 
+then
+	echo "No argument given"
+else
+	echo "You have entered argument $1"
+fi
+
+if [ -d $1 ]
+then
+	lines=$(ls -lh $1 2>> standard_errors_ls | wc -l)
+	echo "You have $(( $lines-1 )) objects in the $1 directory." 2>> standard_errors_ls
+else
+	echo "Directory $1 not found"
+fi
+
