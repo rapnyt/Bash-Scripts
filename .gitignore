@@ -4,3 +4,5 @@
 *.swo
 tar.gz
 logs
+standard_errors_ls
+standard_output_ls
