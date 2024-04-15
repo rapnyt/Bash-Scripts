@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Checking if user entered 2 arguments
+
+if [ $# -ne 2 ]
+then
+	echo -e "Usage: backup_script.sh <source_directory> <destionation_directory>\nCheck your command and try again"
+	exit 1
+fi
+
+#Checking if rsync is installed
+
+if ! command -v rsync > /dev/null 2>&1 #could also do just &>, checking if command is installed, any output sent to null
+then
+	echo -e "This script requires rsync to be installed\nDo you want to install rsync?\ny - yes\nn - no"
+	read answer;
+	
+	case $answer in
+		y) sudo apt-get install -y rsync 1> /dev/null 2>>backup_error.log;;
+		n) echo -e "Exititing the script"
+			exit 2;;
+	esac
+else
+	echo -e "Rsync is installed\nCommencing the backup from $1 to $2"
+fi
+
+# Capturing current date (japanese format)
+current_date=$(date +%Y-%m-%d)
+
+rsync_parameters="-avb --backup-dir $2/$current_date --delete" #initially also had --dry-run parameter for tests
+
+$(which rsync) $rsync_parameters $1 $2/current >> backup_$current_date.log
+
